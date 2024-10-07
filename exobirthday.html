@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExoBirthday</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="exobirthday.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="container">
+
+
+        
+        <h1>SELECT YOUR BIRTH MONTH</h1>
+        
+        <div class="form-group">
+            <label for="mesCumple">Select a month:</label>
+            <select class="form-control" id="mesCumple">
+                <option value="">Select a month</option>
+                <option value="enero">January</option>
+                <option value="febrero">February</option>
+                <option value="marzo">March</option>
+                <option value="abril">April</option>
+                <option value="mayo">May</option>
+                <option value="junio">June</option>
+                <option value="julio">July</option>
+                <option value="agosto">August</option>
+                <option value="septiembre">September</option>
+                <option value="octubre">October</option>
+                <option value="noviembre">November</option>
+                <option value="diciembre">December</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" id="mostrarImagen">Go!</button>
+        <a class="btn btn-secondary" id="back" href="index.html">Back</a>
+
+        <!-- Sección de imágenes -->
+        <div id="imagenMes" class="mt-4">
+            <img id="imgEnero" src="january.png" alt="Imagen de Enero" class="img-fluid">
+            <img id="imgFebrero" src="february.png" alt="Imagen de Febrero" class="img-fluid">
+            <img id="imgMarzo" src="march.png" alt="Imagen de Marzo" class="img-fluid">
+            <img id="imgAbril" src="april.png" alt="Imagen de Abril" class="img-fluid">
+            <img id="imgMayo" src="may.png" alt="Imagen de Mayo" class="img-fluid">
+            <img id="imgJunio" src="june.png" alt="Imagen de Junio" class="img-fluid">
+            <img id="imgJulio" src="july.png" alt="Imagen de Julio" class="img-fluid">
+            <img id="imgAgosto" src="august.png" alt="Imagen de Agosto" class="img-fluid">
+            <img id="imgSeptiembre" src="september.png" alt="Imagen de Septiembre" class="img-fluid">
+            <img id="imgOctubre" src="october.png" alt="Imagen de Octubre" class="img-fluid">
+            <img id="imgNoviembre" src="november.png" alt="Imagen de Noviembre" class="img-fluid">
+            <img id="imgDiciembre" src="december.png" alt="Imagen de Diciembre" class="img-fluid">
+        </div>
+        
+    </div>
+
+    <div class="fixed-buttons">
+        <button class="btn-custom">Make your Exomonth Poster</button>
+        <button class="btn-custom">Want to learn more?</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('mostrarImagen').addEventListener('click', function() {
+            let images = document.querySelectorAll('#imagenMes img');
+
+            // Ocultar todas las imágenes
+            images.forEach(img => img.style.display = 'none');
+
+            let mes = document.getElementById('mesCumple').value;
+
+            if (mes) {
+                let img = document.getElementById('img' + capitalizeFirstLetter(mes));
+                if (img) {
+                    img.style.display = 'block';
+                }
+            }
+        });
+
+        document.getElementById('back').addEventListener('click', function() {
+            window.history.back(); 
+        });
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+    </script>
+
+</body>
+</html>
