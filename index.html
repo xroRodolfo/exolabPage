@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your ExoPlanets Poster</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('BG.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    #drawingApp {
+      position: relative;
+      border: 5px dashed #ff69b4;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    canvas {
+      border: 2px solid #ff1493;
+      cursor: crosshair;
+    }
+    .button {
+      background-color: #ff1493;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #ff69b4;
+    }
+    #buttons, #colorButtons, #backgroundButtons {
+      margin-top: 10px;
+    }
+    .color-button, .background-button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin: 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center; margin-top: 20px;">Create Your ExoPlanets Poster</h1>
+  <div id="drawingApp">
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div id="buttons">
+      <button class="button" onclick="addRectangle()">Add Rectangle</button>
+      <button class="button" onclick="addCircle()">Add Circle</button>
+      <button class="button" onclick="saveImage()">Save Image</button>
+    </div>
+    <div id="colorButtons">
+      <button class="color-button" style="background-color: black;" onclick="setColor('black')"></button>
+      <button class="color-button" style="background-color: red;" onclick="setColor('red')"></button>
+      <button class="color-button" style="background-color: green;" onclick="setColor('green')"></button>
+      <button class="color-button" style="background-color: blue;" onclick="setColor('blue')"></button>
+      <button class="color-button" style="background-color: yellow;" onclick="setColor('yellow')"></button>
+      <button class="color-button" style="background-color: purple;" onclick="setColor('purple')"></button>
+    </div>
+    <div id="backgroundButtons">
+      <button class="background-button" style="background-color: white;" onclick="setBackground('white')"></button>
+      <button class="background-button" style="background-color: lightgray;" onclick="setBackground('lightgray')"></button>
+      <button class="background-button" style="background-color: lightblue;" onclick="setBackground('lightblue')"></button>
+      <button class="background-button" style="background-color: lightgreen;" onclick="setBackground('lightgreen')"></button>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+    let shapes = [];
+    let currentColor = 'black';
+    let currentBackground = 'white';
+
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mousemove', draw);
+
+    function startDrawing(e) {
+      drawing = true;
+      draw(e);
+    }
+
+    function stopDrawing() {
+      drawing = false;
+      ctx.beginPath();
+    }
+
+    function draw(e) {
+      if (!drawing) return;
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = currentColor;
+
+      ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    }
+
+    function addRectangle() {
+      shapes.push({ type: 'rectangle', x: 50, y: 50, width: 100, height: 50, color: currentColor });
+      drawShapes();
+    }
+
+    function addCircle() {
+      shapes.push({ type: 'circle', x: 200, y: 200, radius: 50, color: currentColor });
+      drawShapes();
+    }
+
+    function drawShapes() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = currentBackground;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      shapes.forEach(shape => {
+        if (shape.type === 'rectangle') {
+          ctx.fillStyle = shape.color;
+          ctx.fillRect(shape.x, shape.y, shape.width, shape.height);
+        } else if (shape.type === 'circle') {
+          ctx.fillStyle = shape.color;
+          ctx.beginPath();
+          ctx.arc(shape.x, shape.y, shape.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+    }
+
+    function setColor(color) {
+      currentColor = color;
+    }
+
+    function setBackground(color) {
+      currentBackground = color;
+      drawShapes();
+    }
+
+    function saveImage() {
+      const link = document.createElement('a');
+      link.download = 'drawing.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+
+    drawShapes(); // Initial draw with default background
+  </script>
+</body>
+</html>
