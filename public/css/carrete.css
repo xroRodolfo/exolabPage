@@ -1,166 +1,116 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Mulish", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cards with Bootstrap</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/carrete.css">
+</head>
+<body>
 
-.banner {
-  width: 100%;
-  height: 100vh;
-  background: #6a0dad;
-  background-position: center;
-}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-white bg-dark mb-3 scrollable-card">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <img src="img/planeta1.jpeg" class="card-img-top" alt="PSR B1620-26 b">
+                            <div class="card-body">
+                                <h5 class="card-title">PSR B1620-26 b</h5>
+                                <p class="card-text">This is a very, very old planet. It's so old that it was around when the universe was still young.</p>
+                                <button class="btn btn-light more-info-btn" data-target="#extra-info-1">More info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-.content {
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  color: #fff;
-  z-index: 100;
-}
+            <div class="col-md-6 extra-info" id="extra-info-1" style="display: none;">
+                <div class="card text-white bg-dark mb-3 scrollable-card">
+                    <div class="card-body">
+                        <h5 class="card-title">PSR B1620-26 b - Detailed Information</h5>
+                        <p>Orbits two stars, providing insights into planet formation in the early universe. Very distant from Earth.</p>
+                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-1">Show less</button>
+                    </div>
+                </div>
+            </div>
 
-.content h1 {
-  font-size: 70px;
-  font-weight: bold;
-  margin-top: 80px;
-}
+            <div class="col-md-6">
+                <div class="card text-white bg-dark mb-3 scrollable-card">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <img src="img/planeta2.jpeg" class="card-img-top" alt="Kepler-11 f">
+                            <div class="card-body">
+                                <h5 class="card-title">Kepler-11 f</h5>
+                                <p class="card-text">Kepler-11 f is part of a big family of planets living close to a star, like siblings in a small house.</p>
+                                <button class="btn btn-light more-info-btn" data-target="#extra-info-2">More info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-.content p {
-  font-weight: 50;
-  line-height: 12px;
-}
+            <div class="col-md-6 extra-info" id="extra-info-2" style="display: none;">
+                <div class="card text-white bg-dark mb-3 scrollable-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Kepler-11 f - Detailed Information</h5>
+                        <p>Part of a system with six planets close to their star. Helps scientists study planetary formation and systems.</p>
+                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-2">Show less</button>
+                    </div>
+                </div>
+            </div>
 
-.cover {
-  background: #009688;
-  height: 100%;
-  width: 0%;
-  border-radius: 25px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  transition: 0.5s;
-}
+            <div class="col-md-6">
+                <div class="card text-white bg-dark mb-3 scrollable-card">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <img src="img/planeta3.jpeg" class="card-img-top" alt="Kepler-452b">
+                            <div class="card-body">
+                                <h5 class="card-title">Kepler-452b</h5>
+                                <p class="card-text">Kepler-452b is like Earth's bigger cousin, a bit larger and possibly with water.</p>
+                                <button class="btn btn-light more-info-btn" data-target="#extra-info-3">More info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-button:hover span {
-  width: 100%;
-}
+            <div class="col-md-6 extra-info" id="extra-info-3" style="display: none;">
+                <div class="card text-white bg-dark mb-3 scrollable-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Kepler-452b - Detailed Information</h5>
+                        <p>A rocky planet with potential conditions for liquid water, orbiting in the habitable zone of a Sun-like star.</p>
+                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-3">Show less</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-button:hover {
-  border: none;
-}
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
 
-.product {
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-.product-category {
-  padding: 0 10vw;
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 40px;
-  text-transform: capitalize;
-}
+    <script>
+        document.querySelectorAll('.more-info-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-target'));
+                target.style.display = 'block';
+            });
+        });
 
-.product-container {
-  padding: 0 10vw;
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  height: 450px;
-}
+        document.querySelectorAll('.hide-info-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-target'));
+                target.style.display = 'none';
+            });
+        });
+    </script>
 
-.product-container::-webkit-scrollbar {
-  height: 8px;
-}
-
-.product-container::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-}
-
-.product-container::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
-.product-card {
-  flex: 0 0 auto;
-  width: 250px;
-  margin-right: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-image {
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 10px;
-  text-align: center;
-}
-
-.product-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.product-short-description {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.link-btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background-color: #5c67f2;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background-color 0.3s;
-}
-
-.link-btn:hover {
-  background-color: #3a47c5;
-}
-
-#back {
-  background-color: #f5f2f2; 
-  color: rgb(86, 14, 145); 
-  border: none; 
-  padding: 10px 20px; 
-  font-size: 16px; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  position: fixed;  
-  top: 20px;  
-  right: 20px;  
-  z-index: 1000;  
-  transition: background-color 0.3s; 
-}
-
-#back:hover {
-  background-color: #530586; 
-  color: white;
-}
+</body>
+</html>
