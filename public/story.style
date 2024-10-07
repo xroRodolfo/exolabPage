@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Storybook</title>
+    <link rel="stylesheet" type="text/css" href="storystyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>How Exoplanets are found</title>
+</head>
+<body>
+    
+        
+    <div class="storybook">
+        <div class="progress-bar" id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+
+        <!-- Page 1: Introduction -->
+        <div class="page fade-in" id="page-1">
+            <h1>Your Mission: Find an Exoplanet</h1>
+            <a class="btn btn-secondary" id="back" href="exopedy.html">Back</a>
+            <img src="1.png" alt="Space Exploration" class="story-image">
+            <p>Welcome to the universe of discovery! You are a space explorer tasked with finding new exoplanets. Will you choose the right method to uncover these distant worlds?</p>
+            <button class="next-button" onclick="nextPage()">Start Your Journey</button>
+        </div>
+
+        <!-- Page 2: Choosing a Method -->
+        <div class="page hidden" id="page-2">
+            <h1>Choose Your Method</h1>
+            <img src="2.png" alt="Choosing Method" class="story-image">
+            <p>How will you search for exoplanets?</p>
+            <button class="choice-button" onclick="makeChoice('choice1')">Transit Method</button>
+            <button class="choice-button" onclick="makeChoice('choice2')">Radial Velocity Method</button>
+        </div>
+
+        <!-- Page 3: Transit Method -->
+        <div class="page hidden" id="page-3">
+            <h1>Transit Method</h1>
+            <img src="3.png" alt="Transit Method" class="story-image">
+            <p>You have chosen the Transit Method! This involves observing the light from a star and noting dips in brightness that indicate a planet passing in front.</p>
+            <button class="next-button" onclick="nextPage()">Continue</button>
+        </div>
+
+        <!-- Page 4: Radial Velocity Method -->
+        <div class="page hidden" id="page-4">
+            <h1>Radial Velocity Method</h1>
+            <img src="4.png" alt="Radial Velocity Method" class="story-image">
+            <p>You have chosen the Radial Velocity Method! This technique measures changes in the star's velocity due to the gravitational pull of an orbiting planet.</p>
+            <button class="next-button" onclick="nextPage()">Continue</button>
+        </div>
+
+        <!-- Page 5: Conclusion for Transit -->
+        <div class="page hidden" id="page-5">
+            <h1>Transit Method Success!</h1>
+            <img src="5.png" alt="Success" class="story-image">
+            <p>Congratulations! You've successfully discovered a new exoplanet using the Transit Method!</p>
+            <button class="restart-button" onclick="restartStory()">Restart</button>
+        </div>
+
+        <!-- Page 6: Conclusion for Radial Velocity -->
+        <div class="page hidden" id="page-6">
+            <h1>Radial Velocity Method Success!</h1>
+            <img src="6.png" alt="Success" class="story-image">
+            <p>Congratulations! You've successfully discovered a new exoplanet using the Radial Velocity Method!</p>
+            <button class="restart-button" onclick="restartStory()">Restart</button>
+        </div>
+        </div>
+
+
+    </div>
+    <div style="height: 100vh;"></div>
+    <script>
+        let currentPage = 1;
+        const totalPages = 6; // Update this to match your total pages
+        const progressBar = document.getElementById('progress-bar');
+        const progressFill = document.getElementById('progress-fill');
+
+        function nextPage() {
+            const current = document.getElementById(`page-${currentPage}`);
+            current.classList.add('hidden');
+
+            currentPage++;
+            if (currentPage > totalPages) {
+                currentPage = 1; // Loop back to the start
+            }
+            
+            const next = document.getElementById(`page-${currentPage}`);
+            next.classList.remove('hidden');
+
+            updateProgress();
+        }
+
+        function restartStory() {
+            currentPage = 1;
+            document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+            document.getElementById(`page-${currentPage}`).classList.remove('hidden');
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const progress = (currentPage / totalPages) * 100;
+            progressFill.style.width = `${progress}%`;
+        }
+
+        function toggleMusic() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                playMusicButton.style.display = 'none';
+                pauseMusicButton.style.display = 'inline-block';
+            } else {
+                backgroundMusic.pause();
+                playMusicButton.style.display = 'inline-block';
+                pauseMusicButton.style.display = 'none';
+            }
+        }
+
+        volumeControl.addEventListener('input', (event) => {
+            backgroundMusic.volume = event.target.value;
+        });
+
+        function makeChoice(choice) {
+            switch(choice) {
+                case 'choice1':
+                    showPage(3);
+                    break;
+                case 'choice2':
+                    showPage(4);
+                    break;
+                default:
+                    restartStory();
+                    break;
+            }
+        }
+
+        function showPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.classList.add('hidden'));
+            document.getElementById(`page-${pageNumber}`).classList.remove('hidden');
+            currentPage = pageNumber;
+            updateProgress();
+        }
+
+        updateProgress();
+    
+    </script>
+</body>
+</html>

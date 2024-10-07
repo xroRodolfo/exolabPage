@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="videostyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>SpaceTube</title>
+</head>
+<body>
+
+    <h3 class="heading">SpaceTube</h3>
+
+    <div class="container">
+        <a class="btn btn-secondary" id="back" href="index.html">Back</a>
+        <div class="main-video">
+            <div class="video">
+                <video src="Video1.mp4" controls muted autoplay></video>
+                <h3 class="title">01. Kepler - 11 f - BEYONDSIGHT Team</h3>
+            </div>
+        </div>
+
+        <div class="video-list">
+            <div class="vid active">
+                <video src="Video1.mp4" controls muted></video>
+                <h3 class="title">01. Kepler - 11 f - BEYONDSIGHT Team</h3>
+            </div>
+
+            <div class="vid">
+                <video src="Video2.mp4" muted></video>
+                <h3 class="title">02. Kepler - 425 b - BEYONDSIGHT Team</h3>
+            </div>
+
+            <div class="vid">
+                <video src="Video3.mp4" muted></video>
+                <h3 class="title">03. PSR B1620 - 26b - BEYONDSIGHT Team</h3>
+            </div>
+
+            <div class="vid">
+                <video src="Video4.mp4" muted></video>
+                <h3 class="title">04. 5,000 Exoplanets: Listen to the Sounds of Discovery (NASA Data Sonification) - NASA</h3>
+            </div>
+
+            <div class="vid">
+                <video src="Video5.mp4" muted></video>
+                <h3 class="title">05. Cheops: the hunt for exoplanets - European Space Agency</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let listVideo = document.querySelectorAll(".video-list .vid");
+        let mainVideo = document.querySelector(".main-video video");
+        let title = document.querySelector(".main-video .title");
+
+        listVideo.forEach(video => {
+            video.onclick = () => {
+                listVideo.forEach(vid => vid.classList.remove("active"));
+                video.classList.add("active");
+                mainVideo.src = video.querySelector("video").src;
+                title.textContent = video.querySelector(".title").textContent;
+            }
+        });
+    </script>
+</body>
+</html>
