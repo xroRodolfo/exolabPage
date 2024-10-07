@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cosmic Test</title>
+    <!-- Incluir Bootstrap CSS desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluir tu archivo CSS -->
+    <link rel="stylesheet" href="css/kahoot.css">
+</head>
+<body onload="startTimer()">
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">COSMIC TEST</h1>
+        
+        <!-- Temporizador -->
+        <div id="timer" class="mb-3 text-center">
+            Time left: <span id="time-remaining">30</span> seconds
+        </div>
+
+        <!-- Preguntas -->
+        <div class="card">
+            <div class="card-body">
+                <form id="quiz-form">
+                    <div id="question-container">
+                        <!-- Pregunta 1 -->
+                        <div class="mb-4 question" id="question1">
+                            <h5 class="card-title">Question 1: What is the name of the very old planet that is like a great-great-great-great-great-grandpa planet?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question1" value="PSR B1620-26 b" id="q1option1">
+                                <label class="form-check-label" for="q1option1">PSR B1620-26 b</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question1" value="Jupiter" id="q1option2">
+                                <label class="form-check-label" for="q1option2">Jupiter</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question1" value="Kepler-11 f" id="q1option3">
+                                <label class="form-check-label" for="q1option3">Kepler-11 f</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="mb-4 question d-none" id="question2">
+                            <h5 class="card-title">Question 2: How many stars does the planet PSR B1620-26 b orbit?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question2" value="Two" id="q2option1">
+                                <label class="form-check-label" for="q2option1">Two</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question2" value="One" id="q2option2">
+                                <label class="form-check-label" for="q2option2">One</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question2" value="Three" id="q2option3">
+                                <label class="form-check-label" for="q2option3">Three</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="mb-4 question d-none" id="question3">
+                            <h5 class="card-title">Question 3: What is the name of the planet that is part of a big family of planets living close to their star?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question3" value="Kepler-11 f" id="q3option1">
+                                <label class="form-check-label" for="q3option1">Kepler-11 f</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question3" value="Earth" id="q3option2">
+                                <label class="form-check-label" for="q3option2">Earth</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question3" value="Saturn" id="q3option3">
+                                <label class="form-check-label" for="q3option3">Saturn</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 4 -->
+                        <div class="mb-4 question d-none" id="question4">
+                            <h5 class="card-title">Question 4: What kind of telescope is used to find planets like Kepler-11 f?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question4" value="Kepler" id="q4option1">
+                                <label class="form-check-label" for="q4option1">Kepler</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question4" value="Hubble" id="q4option2">
+                                <label class="form-check-label" for="q4option2">Hubble</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question4" value="James Webb" id="q4option3">
+                                <label class="form-check-label" for="q4option3">James Webb</label>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 5 -->
+                        <div class="mb-4 question d-none" id="question5">
+                            <h5 class="card-title">Question 5: What planet is like a bigger cousin of Earth?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question5" value="Kepler-452b" id="q5option1">
+                                <label class="form-check-label" for="q5option1">Kepler-452b</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question5" value="Mars" id="q5option2">
+                                <label class="form-check-label" for="q5option2">Mars</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question5" value="Neptune" id="q5option3">
+                                <label class="form-check-label" for="q5option3">Neptune</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Next</button>
+                </form>
+                <!-- Contenedor para mostrar la medalla -->
+                <div class="text-center mt-4">
+                    <img src="img/medal_gold.png" alt="Gold Medal" class="medal d-none" id="gold-medal">
+                    <img src="img/medal_silver.png" alt="Silver Medal" class="medal d-none" id="silver-medal">
+                    <img src="img/medal_bronze.png" alt="Bronze Medal" class="medal d-none" id="bronze-medal">
+                </div>
+                <!-- Botón de volver a la página de inicio (Oculto inicialmente) -->
+                <div class="text-center mt-4">
+                    <a href="index.html" class="btn btn-secondary d-none" id="back-to-home-btn">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluir Bootstrap JS y Popper para funciones dinámicas -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Incluir tu archivo JS -->
+    <script src="js/kahoot.js"></script>
+</body>
+</html>
