@@ -8,21 +8,24 @@
     <link rel="stylesheet" href="css/exobirthday.css">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+    <style>
+        #imagenMes img {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="Logo" />
     
     <div class="container">
-
-
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo" />
+        </a>
         
         <h1>SELECT YOUR BIRTH MONTH</h1>
         
         <div class="form-group">
             <label for="mesCumple">Select a month:</label>
-            <select class="form-control" id="mesCumple">
+            <select class="form-control" id="mesCumple" name="mesCumple">
                 <option value="">Select a month</option>
                 <option value="enero">January</option>
                 <option value="febrero">February</option>
@@ -61,9 +64,8 @@
     </div>
 
     <div class="fixed-buttons">
-        <button class="btn-custom" onclick="window.location.href="AI.html">Make your Exomonth Poster</button>
-       <button class="btn-custom" onclick="window.location.href='https://exoplanets.nasa.gov/alien-worlds/exoplanet-travel-bureau/?intent=021'">Want to learn more?</button>
-
+        <button class="btn-custom" onclick="window.location.href='AI.html'">Make your Exomonth Poster</button>
+        <button class="btn-custom" onclick="window.location.href='https://exoplanets.nasa.gov/alien-worlds/exoplanet-travel-bureau/?intent=021'">Want to learn more?</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -98,3 +100,4 @@
 
 </body>
 </html>
+
