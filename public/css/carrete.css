@@ -1,76 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Cards with Bootstrap</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/carrete.css"> <!-- Asegúrate de que la ruta sea correcta -->
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <!-- Tarjeta 1 -->
-            <div class="col-md-6">
-                <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <img src="img/planeta1.jpeg" class="card-img-top" alt="PSR B1620-26 b">
-                    <div class="card-body">
-                        <h5 class="card-title">PSR B1620-26 b</h5>
-                        <p class="card-text">This is a very, very old planet. It's so old that it was around when the universe was still young.</p>
-                        <button class="btn btn-light more-info-btn" data-target="#extra-info-1">More info</button>
-                    </div>
-                </div>
-                <div class="extra-info" id="extra-info-1" style="display: none;">
-                    <div class="card text-white bg-dark mb-3 scrollable-card">
-                        <div class="card-body">
-                            <h5 class="card-title">PSR B1620-26 b - Detailed Information</h5>
-                            <p>Orbits two stars, providing insights into planet formation in the early universe. Very distant from Earth.</p>
-                            <button class="btn btn-light hide-info-btn" data-target="#extra-info-1">Show less</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Tarjeta 2 -->
-            <div class="col-md-6">
-                <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <img src="img/planeta2.jpeg" class="card-img-top" alt="Kepler-11 f">
-                    <div class="card-body">
-                        <h5 class="card-title">Kepler-11 f</h5>
-                        <p class="card-text">Kepler-11 f is part of a big family of planets living close to a star, like siblings in a small house.</p>
-                        <button class="btn btn-light more-info-btn" data-target="#extra-info-2">More info</button>
-                    </div>
-                </div>
-                <div class="extra-info" id="extra-info-2" style="display: none;">
-                    <div class="card text-white bg-dark mb-3 scrollable-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Kepler-11 f - Detailed Information</h5>
-                            <p>Part of a system with multiple planets, known for its interesting orbital characteristics.</p>
-                            <button class="btn btn-light hide-info-btn" data-target="#extra-info-2">Show less</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <a href="index.html" class="btn btn-secondary">Back to Home</a>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.querySelectorAll('.more-info-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const target = document.querySelector(this.getAttribute('data-target'));
-                target.style.display = 'block';
-            });
-        });
-        document.querySelectorAll('.hide-info-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const target = document.querySelector(this.getAttribute('data-target'));
-                target.style.display = 'none';
-            });
-        });
-    </script>
-</body>
-</html>
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background: #6a0dad;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+.container .card {
+    background: linear-gradient(60deg, #151516 0%, #122239 100%);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.container .card h5 {
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.container .card p {
+    font-size: 14px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.btn-secondary {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
+
+.hide-info-btn,
+.more-info-btn {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: white;
+}
+
+.hide-info-btn:hover,
+.more-info-btn:hover {
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
+
+@media (max-width: 767px) {
+    .logo img {
+        width: 50px;
+    }
+
+    .container .card {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .container .card .card-body h5 {
+        font-size: 16px;
+    }
+
+    .container .card .card-body p {
+        font-size: 12px;
+    }
+}
