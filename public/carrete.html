@@ -10,41 +10,42 @@
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
+            <!-- Primera tarjeta -->
             <div class="col-md-6">
                 <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <div class="row no-gutters">
-                        <div class="col-md-12">
-                            <img src="img/planeta1.jpeg" class="card-img-top" alt="PSR B1620-26 b"> <!-- Asegúrate de que este archivo exista -->
-                            <div class="card-body">
-                                <h5 class="card-title">PSR B1620-26 b</h5>
-                                <p class="card-text">This is a very, very old planet. It's so old that it was around when the universe was still young.</p>
-                                <button class="btn btn-light more-info-btn" data-target="#extra-info-1">More info</button>
-                            </div>
+                    <img src="img/planeta1.jpeg" class="card-img-top" alt="PSR B1620-26 b"> <!-- Asegúrate de que este archivo exista -->
+                    <div class="card-body">
+                        <h5 class="card-title">PSR B1620-26 b</h5>
+                        <p class="card-text">This is a very, very old planet. It's so old that it was around when the universe was still young.</p>
+                        <button class="btn btn-light more-info-btn" data-target="#extra-info-1">More info</button>
+                    </div>
+                </div>
+                <div class="extra-info" id="extra-info-1" style="display: none;">
+                    <div class="card text-white bg-dark mb-3 scrollable-card">
+                        <div class="card-body">
+                            <h5 class="card-title">PSR B1620-26 b - Detailed Information</h5>
+                            <p>Orbits two stars, providing insights into planet formation in the early universe. Very distant from Earth.</p>
+                            <button class="btn btn-light hide-info-btn" data-target="#extra-info-1">Show less</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 extra-info" id="extra-info-1" style="display: none;">
-                <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <div class="card-body">
-                        <h5 class="card-title">PSR B1620-26 b - Detailed Information</h5>
-                        <p>Orbits two stars, providing insights into planet formation in the early universe. Very distant from Earth.</p>
-                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-1">Show less</button>
-                    </div>
-                </div>
-            </div>
-         </div>
-        </div>
+            <!-- Segunda tarjeta -->
             <div class="col-md-6">
                 <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <div class="row no-gutters">
-                        <div class="col-md-12">
-                            <img src="img/planeta2.jpeg" class="card-img-top" alt="Kepler-11 f">
-                            <div class="card-body">
-                                <h5 class="card-title">Kepler-11 f</h5>
-                                <p class="card-text">Kepler-11 f is part of a big family of planets living close to a star, like siblings in a small house.</p>
-                                <button class="btn btn-light more-info-btn" data-target="#extra-info-2">More info</button>
-                            </div>
+                    <img src="img/planeta2.jpeg" class="card-img-top" alt="Kepler-11 f">
+                    <div class="card-body">
+                        <h5 class="card-title">Kepler-11 f</h5>
+                        <p class="card-text">Kepler-11 f is part of a big family of planets living close to a star, like siblings in a small house.</p>
+                        <button class="btn btn-light more-info-btn" data-target="#extra-info-2">More info</button>
+                    </div>
+                </div>
+                <div class="extra-info" id="extra-info-2" style="display: none;">
+                    <div class="card text-white bg-dark mb-3 scrollable-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kepler-11 f - Detailed Information</h5>
+                            <p>Part of a system with multiple planets, known for its interesting orbital characteristics.</p>
+                            <button class="btn btn-light hide-info-btn" data-target="#extra-info-2">Show less</button>
                         </div>
                     </div>
                 </div>
