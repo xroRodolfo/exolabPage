@@ -1,95 +1,167 @@
-/* Estilos generales */
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #6a0dad;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif;
 }
 
-
-
-.logo img {
-    width: 100px; 
-    height: auto;
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: url("BG.png");
+  background-size: cover;
+  background-position: center;
 }
 
-/* Contenedor de las cartas */
-.container {
-    width: 100%;
-    padding: 20px;
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+  z-index: 100;
 }
 
-
-.container .card {
-    background: linear-gradient(60deg, #151516 0%, #122239 100%);
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    color: #fff;
+.content h1 {
+  font-size: 70px;
+  font-weight: bold;
+  margin-top: 80px;
 }
 
-.container .card h5 {
-    font-size: 24px;
-    font-weight: 700;
-    transition: 0.2s ease;
+.content p {
+  font-weight: 50;
+  line-height: 12px;
 }
 
-.container .card p {
-    font-size: 16px;
+.cover {
+  background: #009688;
+  height: 100%;
+  width: 0%;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+button:hover span {
+  width: 100%;
 }
 
 button:hover {
-    background-color: #ddd;
+  border: none;
 }
 
-.btn-secondary {
-    background-color: #ff6600;
-    border-color: #ff6600;
-    color: white;
+.product {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
 }
 
-.btn-secondary:hover {
-    background-color: #ff4500;
-    border-color: #ff4500;
+.product-category {
+  padding: 0 10vw;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-transform: capitalize;
 }
 
-.hide-info-btn, .more-info-btn {
-    background-color: #ff6600;
-    border-color: #ff6600;
-    color: white;
+.product-container {
+  padding: 0 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  height: 450px;
 }
 
-.hide-info-btn:hover, .more-info-btn:hover {
-    background-color: #ff4500;
-    border-color: #ff4500;
+.product-container::-webkit-scrollbar {
+  height: 8px;
 }
 
-/* Responsivo */
-@media (max-width: 767px) {
-    .logo img {
-        width: 50px; 
-    }
+.product-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
 
-    .container .card {
-        margin-bottom: 20px;
-    }
+.product-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
 
-    .container .card .card-body h5 {
-        font-size: 18px;
-    }
+.product-card {
+  flex: 0 0 auto;
+  width: 250px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
 
-    .container .card .card-body p {
-        font-size: 14px;
-    }
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.product-short-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.link-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #5c67f2;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s;
+}
+
+.link-btn:hover {
+  background-color: #3a47c5;
+}
+
+#back {
+  background-color: #f5f2f2; 
+  color: rgb(86, 14, 145); 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  position: fixed;  
+  top: 20px;  
+  right: 20px;  
+  z-index: 1000;  
+  transition: background-color 0.3s; 
+}
+
+#back:hover {
+  background-color: #530586; 
+  color: white;
 }
