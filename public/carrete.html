@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Cards with Bootstrap</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/carrete.css">
+    <link rel="stylesheet" href="css/carrete.css"> <!-- Ajusta si es necesario -->
 </head>
 <body>
-
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card text-white bg-dark mb-3 scrollable-card">
                     <div class="row no-gutters">
                         <div class="col-md-12">
-                            <img src="img/planeta1.jpeg" class="card-img-top" alt="PSR B1620-26 b">
+                            <img src="img/planeta1.jpeg" class="card-img-top" alt="PSR B1620-26 b"> <!-- Asegúrate de que este archivo exista -->
                             <div class="card-body">
                                 <h5 class="card-title">PSR B1620-26 b</h5>
                                 <p class="card-text">This is a very, very old planet. It's so old that it was around when the universe was still young.</p>
@@ -25,7 +24,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6 extra-info" id="extra-info-1" style="display: none;">
                 <div class="card text-white bg-dark mb-3 scrollable-card">
                     <div class="card-body">
@@ -50,52 +48,14 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6 extra-info" id="extra-info-2" style="display: none;">
-                <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Kepler-11 f - Detailed Information</h5>
-                        <p>Part of a system with six planets close to their star. Helps scientists study planetary formation and systems.</p>
-                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-2">Show less</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <div class="row no-gutters">
-                        <div class="col-md-12">
-                            <img src="img/planeta3.jpeg" class="card-img-top" alt="Kepler-452b">
-                            <div class="card-body">
-                                <h5 class="card-title">Kepler-452b</h5>
-                                <p class="card-text">Kepler-452b is like Earth's bigger cousin, a bit larger and possibly with water.</p>
-                                <button class="btn btn-light more-info-btn" data-target="#extra-info-3">More info</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 extra-info" id="extra-info-3" style="display: none;">
-                <div class="card text-white bg-dark mb-3 scrollable-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Kepler-452b - Detailed Information</h5>
-                        <p>A rocky planet with potential conditions for liquid water, orbiting in the habitable zone of a Sun-like star.</p>
-                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-3">Show less</button>
-                    </div>
-                </div>
-            </div>
         </div>
-
         <div class="text-center mt-4">
             <a href="index.html" class="btn btn-secondary">Back to Home</a>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
         document.querySelectorAll('.more-info-btn').forEach(button => {
             button.addEventListener('click', function() {
@@ -103,7 +63,6 @@
                 target.style.display = 'block';
             });
         });
-
         document.querySelectorAll('.hide-info-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const target = document.querySelector(this.getAttribute('data-target'));
@@ -111,6 +70,5 @@
             });
         });
     </script>
-
 </body>
 </html>
