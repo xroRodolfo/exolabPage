@@ -1,65 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cards with Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="carrete.css">
+</head>
+<body>
 
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #6a0dad;
-    overflow-y: auto; 
-}
+  
 
+    <!-- Cartas interactivas con Bootstrap -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Tarjeta 1 -->
+            <div class="col-md-8 col-lg-6 mb-4">
+                <div class="card text-white bg-dark h-100">
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-4">
+                            <img src="planeta1.jpeg" class="card-img" alt="Jinx Image">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">PSR B1620-26 b</h5>
+                                <p class="card-text">This is a very, very old planet. It's so old that it was around when the universe was still young.</p>
+                                <button class="btn btn-light more-info-btn" data-target="#extra-info-1">More info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 10px; 
-}
+            <!-- Tarjeta extendida 1 (inicialmente oculta) -->
+            <div class="col-md-8 col-lg-6 mb-4 extra-info" id="extra-info-1" style="display: none;">
+                <div class="card text-white bg-dark h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">PSR B1620-26 b - Detailed Information</h5>
+                        <p>Orbits two stars, providing insights into planet formation in the early universe. Very distant from Earth.</p>
+                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-1">Show less</button>
+                    </div>
+                </div>
+            </div>
 
-.logo img {
-    width: 100px; 
-    height: auto;
-}
+            <!-- Tarjeta 2 -->
+            <div class="col-md-8 col-lg-6 mb-4">
+                <div class="card text-white bg-dark h-100">
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-4">
+                            <img src="img/planeta2.jpeg" class="card-img" alt="Yasuo Image">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Kepler-11 f</h5>
+                                <p class="card-text">Kepler-11 f is part of a big family of planets living close to a star, like siblings in a small house.</p>
+                                <button class="btn btn-light more-info-btn" data-target="#extra-info-2">More info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Tarjeta extendida 2 (inicialmente oculta) -->
+            <div class="col-md-8 col-lg-6 mb-4 extra-info" id="extra-info-2" style="display: none;">
+                <div class="card text-white bg-dark h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Kepler-11 f - Detailed Information</h5>
+                        <p>Part of a system with six planets close to their star. Helps scientists study planetary formation and systems.</p>
+                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-2">Show less</button>
+                    </div>
+                </div>
+            </div>
 
-.container {
-    width: 100%;
-    padding: 20px;
-}
+            <!-- Tarjeta 3 -->
+            <div class="col-md-8 col-lg-6 mb-4">
+                <div class="card text-white bg-dark h-100">
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-4">
+                            <img src="img/planeta3.jpeg" class="card-img" alt="Ahri Image">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Kepler-452b</h5>
+                                <p class="card-text">Kepler-452b is like Earth's bigger cousin, a bit larger and possibly with water.</p>
+                                <button class="btn btn-light more-info-btn" data-target="#extra-info-3">More info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Tarjeta extendida 3 (inicialmente oculta) -->
+            <div class="col-md-8 col-lg-6 mb-4 extra-info" id="extra-info-3" style="display: none;">
+                <div class="card text-white bg-dark h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Kepler-452b - Detailed Information</h5>
+                        <p>A rocky planet with potential conditions for liquid water, orbiting in the habitable zone of a Sun-like star.</p>
+                        <button class="btn btn-light hide-info-btn" data-target="#extra-info-3">Show less</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.scrollable-card {
-    background: linear-gradient(60deg, #151516 0%, #122239 100%);
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    color: #fff;
-    overflow-y: auto; 
-    max-height: 400px; 
-    margin-bottom: 20px; 
-}
+        <!-- Botón Back to Home -->
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
 
-.scrollable-card img {
-    margin-top: 10px;
-    border-radius: 20px 20px 0 0; 
-    max-height: 200px; 
-    object-fit: cover;
-    width: 100%;
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-.scrollable-card .card-body {
-    max-height: 150px; 
-    overflow-y: auto; 
-}
+    <!-- JavaScript para mostrar/ocultar info adicional -->
+    <script>
+        document.querySelectorAll('.more-info-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-target'));
+                target.style.display = 'block';
+            });
+        });
 
-.scrollable-card h5 {
-    font-size: 24px;
-    font-weight: 700;
-    transition: 0.2s ease;
-}
+        document.querySelectorAll('.hide-info-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-target'));
+                target.style.display = 'none';
+            });
+        });
+    </script>
 
-.scrollable-card p {
-    font-size: 16px;
-}
-
-button {
-    margin-top: 20px
+</body>
+</html>
