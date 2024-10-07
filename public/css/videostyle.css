@@ -31,7 +31,7 @@ header {
 
 body {
     padding-top: 60px;
-    background: url("public/Fondo.jpg") top center;
+    background: url("img/Fondo.jpg") top center;
     background-size: cover;
     z-index: -1; /* Envía el fondo detrás de todo */
 }
