@@ -28,22 +28,22 @@
             </div>
 
             <div class="vid">
-                <video src="Video2.mp4" muted></video>
+                <video src="Video2.mp4" controls muted></video>
                 <h3 class="title">02. Kepler - 425 b - BEYONDSIGHT Team</h3>
             </div>
 
             <div class="vid">
-                <video src="Video3.mp4" muted></video>
+                <video src="Video3.mp4" controls muted></video>
                 <h3 class="title">03. PSR B1620 - 26b - BEYONDSIGHT Team</h3>
             </div>
 
             <div class="vid">
-                <video src="Video4.mp4" muted></video>
+                <video src="Video4.mp4" controls muted></video>
                 <h3 class="title">04. 5,000 Exoplanets: Listen to the Sounds of Discovery (NASA Data Sonification) - NASA</h3>
             </div>
 
             <div class="vid">
-                <video src="Video5.mp4" muted></video>
+                <video src="Video5.mp4" controls muted></video>
                 <h3 class="title">05. Cheops: the hunt for exoplanets - European Space Agency</h3>
             </div>
         </div>
@@ -60,6 +60,7 @@
                 video.classList.add("active");
                 mainVideo.src = video.querySelector("video").src;
                 title.textContent = video.querySelector(".title").textContent;
+                mainVideo.play(); // Para reproducir el video seleccionado automáticamente
             }
         });
     </script>
