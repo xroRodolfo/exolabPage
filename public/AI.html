@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Your ExoPlanets Poster</title>
-  <a class="btn btn-secondary" id="back" href="exobirthday.html">Back</a>
-  
   <style>
-    
     body {
       margin: 0;
       display: flex;
@@ -27,10 +24,10 @@
         font-size: 16px; 
         border-radius: 5px; 
         cursor: pointer; 
-        position: fixed;  /* Posición fija */
-        top: 20px;  /* Ajusta la distancia desde la parte superior */
-        right: 20px;  /* Ajusta la distancia desde la derecha */
-        z-index: 1000;  /* Asegura que el botón esté en la parte superior de otros elementos */
+        position: fixed; 
+        top: 20px;  
+        right: 20px;  
+        z-index: 1000;  
         transition: background-color 0.3s; 
     }
     
@@ -46,17 +43,20 @@
       background: rgba(255, 255, 255, 0.8);
       text-align: center;
     }
+
     h1 {
       margin-top: 20px;
       font-size: 2em;
       line-height: 1.2;
     }
+
     canvas {
       border: 2px solid #ff1493;
       cursor: crosshair;
       display: block;
       margin: 0 auto;
     }
+
     .button {
       background-color: #ff1493;
       color: white;
@@ -67,13 +67,16 @@
       border-radius: 12px;
       transition: background-color 0.3s ease;
     }
+
     .button:hover {
       background-color: #ff69b4;
     }
+
     #buttons, #colorButtons, #backgroundButtons {
       margin-top: 10px;
       text-align: center;
     }
+
     .color-button, .background-button {
       width: 30px;
       height: 30px;
@@ -85,6 +88,9 @@
   </style>
 </head>
 <body>
+  
+  <a class="btn btn-secondary" id="back" href="exobirthday.html">Back</a>
+  
   <div id="drawingApp">
     <h1>Create Your ExoPlanets Poster</h1>
     <canvas id="canvas" width="800" height="600"></canvas>
@@ -121,6 +127,14 @@
     canvas.addEventListener('mouseup', stopDrawing);
     canvas.addEventListener('mousemove', draw);
 
+    function getMousePos(event) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+      };
+    }
+
     function startDrawing(e) {
       drawing = true;
       draw(e);
@@ -133,14 +147,15 @@
 
     function draw(e) {
       if (!drawing) return;
+      const { x, y } = getMousePos(e);
       ctx.lineWidth = 5;
       ctx.lineCap = 'round';
       ctx.strokeStyle = currentColor;
 
-      ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      ctx.lineTo(x, y);
       ctx.stroke();
       ctx.beginPath();
-      ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      ctx.moveTo(x, y);
     }
 
     function addRectangle() {
@@ -190,3 +205,4 @@
   </script>
 </body>
 </html>
+
