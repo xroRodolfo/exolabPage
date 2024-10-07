@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="infostyle.css">
+    <title>Exoplanet Gallery</title>
+    <a class="btn btn-secondary" id="back" href="exopedy.html">Back</a>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('info.png');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Mulish', sans-serif;
+        }
+
+        .product-category {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            font-size: 2rem;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: auto; /* Permite el desplazamiento horizontal */
+            scroll-behavior: smooth;
+        }
+
+        .product-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+            flex: 0 0 auto; /* Permite que las tarjetas tengan un tamaño fijo */
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-brand {
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .product-short-description {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .link-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #5c67f2;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .link-btn:hover {
+            background-color: #3a47c5;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="product">
+        <h2 class="product-category">Exoplanetary Systems</h2>
+        <div class="product-container">
+            <!-- NASA Exoplanet Archive -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Card1.png" class="product-thumb" alt="NASA EXOPLANET ARCHIVE">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">NASA EXOPLANET ARCHIVE</h2>
+                    <p class="product-short-description">Dive into a comprehensive database of confirmed exoplanets and their fascinating properties!</p>
+                    <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" class="link-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- ESA Exoplanets -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="card2.png" class="product-thumb" alt="Exoplanets ESA Article">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">EXOPLANETS - ESA</h2>
+                    <p class="product-short-description">Read the latest discoveries and insights from the European Space Agency about exoplanets beyond our solar system.</p>
+                    <a href="https://www.esa.int/Science_Exploration/Space_Science/Exoplanets" target="_blank" class="link-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- NASA Exoplanets -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Card3.png" class="product-thumb" alt="NASA Exoplanets">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">NASA EXOPLANETS</h2>
+                    <p class="product-short-description">Access NASA's curated resources and articles on groundbreaking exoplanet research and missions.</p>
+                    <a href="https://exoplanets.nasa.gov/" target="_blank" class="link-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Lightkurve -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Card4.png" class="product-thumb" alt="Lightkurve">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">LIGHTKURVE</h2>
+                    <p class="product-short-description">Utilize this powerful tool to analyze data from NASA’s Kepler and TESS missions, perfect for discovering new worlds!</p>
+                    <a href="https://docs.lightkurve.org/" target="_blank" class="link-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- MAST (Mikulski Archive for Space Telescopes) -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Card5.png" class="product-thumb" alt="MAST">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">MAST</h2>
+                    <p class="product-short-description">Search and access a wealth of astronomical data from various space telescopes and missions.</p>
+                    <a href="https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html" target="_blank" class="link-btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Exoplanet Catalog -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="Card6.png" class="product-thumb" alt="Exoplanet Catalog">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">EXOPLANET CATALOG</h2>
+                    <p class="product-short-description">Explore the comprehensive exoplanet catalog and learn more about distant worlds.</p>
+                    <a href="https://exoplanets.nasa.gov/exoplanet-catalog/" target="_blank" class="link-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
