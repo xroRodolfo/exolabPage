@@ -1,0 +1,136 @@
+body {
+    background-color: #6a0dad;
+    color: #ffff; /* Color del texto por defecto */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 80px; 
+}
+
+.container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+h1 {
+    color: #ffff; /* Color */
+    font-size: 2.5rem; 
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.form-group label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Estilo del select */
+select {
+    background-color: #ffb000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+/* Hover en el select */
+select:hover {
+    background-color: #f3d28a;
+}
+
+/* Estilo del botón */
+button {
+    font-family: "League Spartan", sans-serif;
+    background-color: #ffb000;
+    color: white; 
+    border: none; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Hover en el botón */
+button:hover {
+    background-color: #f3d28a;
+}
+
+#back {
+    background-color: #f5f2f2; 
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: rgb(86, 14, 145); 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+#back:hover {
+    background-color: #530586; 
+    color: white;
+}
+
+
+
+.fixed-buttons {
+    position: fixed; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex;
+    gap: 10px; 
+}
+
+.btn-custom {
+    background-color: orange; 
+    color: white; 
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Hover 
+.btn-custom:hover {
+    background-color: #e68a00; 
+
+/* Ocultar imágenes pero mantener su espacio */
+#imagenMes img {
+    display: none;
+    width: 100%; 
+    height: auto; 
+    margin-top: 20px; 
+}
+
+.logo img {
+    width: 170px; 
+    top: 15px;
+    left: -10px;
+}
+
+@media screen {
+
+    #back {
+        padding: 3px 20px; 
+        font-size: 12px; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+    }
+
+    .logo img {
+        width: 100px; 
+        margin-top: 10px;
+    }
+    
+}

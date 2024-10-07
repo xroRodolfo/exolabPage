@@ -1,0 +1,96 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #6a0dad;
+}
+
+/* Estilo del logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Mantén el logo en la esquina superior derecha */
+}
+
+.logo img {
+    width: 400px;
+    height: auto;
+}
+
+/* Contenedor de las cartas */
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilos de las cartas */
+.container .card {
+    position: relative;
+    width: 350px; /* Ajustar el ancho a 250px */
+    height: auto;
+    padding: 10px; /* Reduce el padding */
+    background: linear-gradient(60deg, #151516 0%, #122239 100%);
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.container .card h5 {
+    z-index: 99;
+    font-size: 20px; /* Ajustar tamaño de fuente */
+    font-weight: 700;
+    color: #fff;
+}
+
+.container .card p {
+    z-index: 99;
+    font-size: 14px; /* Ajustar tamaño de fuente */
+    margin-bottom: 10px;
+}
+
+button, .btn-linkedin {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover, .btn-linkedin:hover {
+    background-color: #ddd;
+}
+
+/* Estilos específicos para botones de LinkedIn */
+.btn-linkedin {
+    background-color: #ff6600; /* Color de LinkedIn */
+    color: white;
+    text-align: center;
+}
+
+.btn-linkedin:hover {
+    background-color: #ff6600; /* Color más oscuro de LinkedIn al pasar el mouse */
+}
+
+/* Estilos del botón Back to Home */
+.btn-secondary {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #ff4500;
+    border-color: #ff4500;
+}
