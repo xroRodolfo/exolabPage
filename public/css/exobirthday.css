@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 80px; 
+    padding-bottom: 80px; /* Para evitar que el contenido se esconda detrás de los botones fijos */
 }
 
 .container {
