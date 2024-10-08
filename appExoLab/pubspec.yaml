@@ -1,0 +1,42 @@
+name: exoplanet
+description: A new Flutter project.
+
+publish_to: 'none'  
+
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=2.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  url_launcher: ^6.0.20
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  flutter_launcher_icons: ^0.12.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/icono.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fondo2.png
+    - assets/inicio.png
+    - assets/tierra.png
+    - assets/quizz.png
+    - assets/second.png
+    - assets/planetalisto1.png
+    - assets/planetalisto2.png
+    - assets/planetalisto3.png
+    - assets/icons/icono.png
